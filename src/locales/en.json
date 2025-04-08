@@ -1,0 +1,106 @@
+{
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "chinese": "Chinese",
+    "close": "Close",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "success": "Success",
+    "error": "Error",
+    "loading": "Loading...",
+    "retry": "Retry"
+  },
+  "navigation": {
+    "home": "Home",
+    "events": "Events",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "CDC Bar Calendar",
+      "subtitle": "Your Ultimate Guide to Chengdu's Nightlife Events"
+    },
+    "featuredEvent": {
+      "title": "Featured Event",
+      "viewAll": "View All Events"
+    },
+    "title": "Welcome to CDC Bar Calendar",
+    "description": "Stay updated with the latest events and activities at CDC Bar",
+    "featuredEvent": "Featured Event",
+    "viewAllEvents": "View All Events"
+  },
+  "events": {
+    "title": "Events",
+    "noEvents": "No events found",
+    "readMore": "Read More",
+    "backToEvents": "Back to Events",
+    "details": {
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "description": "Description"
+    }
+  },
+  "subscription": {
+    "title": "Track latest events",
+    "description": "Subscribe to receive updates about our latest events and activities",
+    "form": {
+      "email": "Email",
+      "phone": "Phone Number",
+      "contactMethod": "Contact Method",
+      "verificationCode": "Verification Code",
+      "sendCode": "Send Code",
+      "subscribe": "Subscribe",
+      "success": "Successfully subscribed!",
+      "error": "An error occurred. Please try again.",
+      "close": "Close"
+    }
+  },
+  "submitEvent": {
+    "title": "Submit an event",
+    "form": {
+      "title": "Event Title",
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "description": "Description",
+      "image": "Event Image",
+      "submit": "Submit Event",
+      "success": "Event submitted successfully!",
+      "error": "An error occurred while submitting the event. Please try again.",
+      "close": "Close"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "content": "Chengdu Bar Calendar is a platform dedicated to providing the latest and most comprehensive bar event information for nightlife enthusiasts in Chengdu. We collect and organize event information from various bars, making it easy for you to stay updated with Chengdu's nightlife scene.",
+    "contact": {
+      "title": "Contact Us",
+      "email": {
+        "title": "Email",
+        "value": ""
+      },
+      "social": {
+        "title": "Social Media",
+        "wechat": "",
+        "xiaohongshu": ""
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have questions or suggestions? We'd love to hear from you!",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "form": {
+      "name": "Name",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
+  }
+} 

@@ -1,0 +1,98 @@
+{
+  "common": {
+    "language": "语言",
+    "english": "英文",
+    "chinese": "中文",
+    "close": "关闭",
+    "submit": "提交",
+    "cancel": "取消",
+    "success": "成功",
+    "error": "错误",
+    "loading": "加载中..."
+  },
+  "navigation": {
+    "home": "首页",
+    "events": "活动",
+    "about": "关于",
+    "contact": "联系我们"
+  },
+  "home": {
+    "hero": {
+      "title": "CDC酒吧日历",
+      "subtitle": "成都夜生活活动指南"
+    },
+    "featuredEvent": {
+      "title": "精选活动",
+      "viewAll": "查看所有活动"
+    }
+  },
+  "events": {
+    "title": "即将举行的活动",
+    "noEvents": "目前没有即将举行的活动",
+    "details": {
+      "date": "日期",
+      "time": "时间",
+      "location": "地点",
+      "description": "描述"
+    }
+  },
+  "subscription": {
+    "title": "跟踪最新活动",
+    "description": "订阅以接收即将举行的活动更新",
+    "form": {
+      "email": "电子邮箱",
+      "phone": "电话号码",
+      "contactMethod": "联系方式",
+      "verificationCode": "验证码",
+      "sendCode": "发送验证码",
+      "submit": "订阅",
+      "success": "订阅成功！",
+      "error": "发生错误，请重试。"
+    }
+  },
+  "submitEvent": {
+    "title": "提交活动信息",
+    "form": {
+      "eventTitle": "活动标题",
+      "date": "日期",
+      "time": "时间",
+      "location": "地点",
+      "description": "描述",
+      "image": "活动图片",
+      "submit": "提交活动",
+      "success": "活动提交成功！",
+      "error": "提交活动时发生错误，请重试。",
+      "close": "关闭"
+    }
+  },
+  "about": {
+    "title": "关于我们",
+    "content": "成都酒吧日历是您探索成都充满活力的饮酒文化的首选指南。我们致力于为本地居民和游客提供最全面、最新的鸡尾酒、精酿啤酒和烈酒资讯。无论您是资深爱好者、好奇的旅行者，还是业内专业人士，我们都将为您介绍成都最棒的酒吧活动、品鉴会、特色促销和行业动态。与我们一同踏上这段探索成都热闹酒吧文化的精彩旅程。",
+    "contact": {
+      "title": "联系我们",
+      "email": {
+        "title": "电子邮件",
+        "value": ""
+      },
+      "social": {
+        "title": "社交媒体",
+        "wechat": "",
+        "xiaohongshu": ""
+      }
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "有问题或建议？我们很乐意听取您的意见！",
+    "email": "电子邮箱",
+    "phone": "电话",
+    "address": "地址",
+    "form": {
+      "name": "姓名",
+      "message": "留言",
+      "submit": "发送留言",
+      "success": "留言发送成功！",
+      "error": "发送留言失败，请重试。"
+    }
+  }
+} 
