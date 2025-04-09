@@ -1,30 +1,29 @@
 {
   "events": [
-    {
+      {
       "id": "1",
       "title": {
-        "en": "Guest Shift by Guangzhou's champion bartender couple in Papuwa",
-        "zh": "广州冠军夫妻档调酒师接管Papuwa!"
+        "en": "GUEST SHIFT",
+        "zh": "客座调酒"
       },
       "date": {
-        "en": "April 12, 2025",
-        "zh": "2025年4月12日"
+        "en": "April 11-12, 2025",
+        "zh": "2025年4月11,12日"
       },
       "time": {
         "en": "8:00 PM",
         "zh": "20:00"
       },
       "location": {
-        "en": "Papuwa, Jinjiang District",
-        "zh": "Papuwa, 锦江区"
+        "en": ", ",
+        "zh": ", "
       },
-      "image": "/images/4_12.jpg",
+      "image": "/images/4_11.jpg",
       "description": {
-        "en": "Papuwa Chengdu proudly presents Guest Shift Night, featuring award-winning mixologists from Guangzhou! Join us as champion bartenders 44 from CANTINA AAH and Kaka from IBARUS take over our bar for one special evening. This talented duo will showcase their signature cocktails, blending innovative techniques with a creative mix of ingredients including chili, seafood, grilled elements, exotic spices, and fresh fruits and herbs. Experience their unique personal styles and award-winning creations on April 12, 2025, from 9:00 PM to midnight at our Jinjiang District location. Don't miss this extraordinary cocktail journey!",
-        "zh": "成都Papuwa隆重呈现客座调酒师之夜，特邀广州顶尖调酒大师驾临！广州CANTINA AAH的44和广州IBARUS的卡卡，这对荣获多项全国及地区冠军的夫妻调酒师将为您呈现独具匠心的鸡尾酒体验。他们将运用辣椒、海鲜、炙烤元素、香料以及新鲜果蔬，创造出极具个人特色的独特调酒作品。2025年4月12日晚9点至午夜，锦江区东顺城南路的Papuwa期待您的光临，共享这场非凡的味蕾盛宴！"
+        "en": "",
+        "zh": ""
       }
-{
-  "events": [
+    }
     {
       "id": "2",
       "title": {
