@@ -4,14 +4,15 @@ import React from 'react';
 import { useAppTranslation } from '../hooks/useAppTranslation';
 
 export const Footer: React.FC = () => {
-  const { t } = useAppTranslation('common');
+  const { t, currentLanguage } = useAppTranslation('common');
+  const isChinese = currentLanguage === 'zh';
 
   return (
     <footer className="bg-gray-800 text-white py-4">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col items-center">
           <div className="text-lg font-medium mb-3">Follow us</div>
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-6">
             {/* Instagram Icon */}
             <a 
               href="https://www.instagram.com/chengdu_barcalendar/" 
@@ -26,19 +27,16 @@ export const Footer: React.FC = () => {
               <span>@chengdu_barcalendar</span>
             </a>
 
-            {/* Email */}
-            <a 
-              href="mailto:contact@cdcbarcalendar.com" 
-              className="text-gray-400 hover:text-white transition-colors flex items-center"
-            >
-              <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            {/* WeChat - 使用更标准的微信图标 */}
+            <div className="text-gray-400 hover:text-white transition-colors flex items-center">
+              <svg className="h-6 w-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.5,4C5.36,4 2,6.69 2,10C2,11.89 3.08,13.56 4.78,14.66L4,17L6.5,15.5C7.39,15.81 8.37,16 9.41,16C9.15,15.37 9,14.7 9,14C9,10.69 12.13,8 16,8C16.19,8 16.38,8.01 16.56,8.03C15.54,5.69 12.78,4 9.5,4M6.5,6.5A1,1 0 0,1 7.5,7.5A1,1 0 0,1 6.5,8.5A1,1 0 0,1 5.5,7.5A1,1 0 0,1 6.5,6.5M11.5,6.5A1,1 0 0,1 12.5,7.5A1,1 0 0,1 11.5,8.5A1,1 0 0,1 10.5,7.5A1,1 0 0,1 11.5,6.5M16,9C13.24,9 11,11.24 11,14C11,16.76 13.24,19 16,19C16.84,19 17.63,18.81 18.36,18.46L20,19.5L19.5,17.97C20.48,17.12 21,15.62 21,14C21,11.24 18.76,9 16,9M14.5,11.5A1,1 0 0,1 15.5,12.5A1,1 0 0,1 14.5,13.5A1,1 0 0,1 13.5,12.5A1,1 0 0,1 14.5,11.5M17.5,11.5A1,1 0 0,1 18.5,12.5A1,1 0 0,1 17.5,13.5A1,1 0 0,1 16.5,12.5A1,1 0 0,1 17.5,11.5Z" />
               </svg>
-              <span>contact@cdcbarcalendar.com</span>
-            </a>
+              <span>{isChinese ? "微信账号：" : "WeChat: "}1664508573</span>
+            </div>
           </div>
         </div>
       </div>
     </footer>
   );
-}; 
+};

@@ -22,16 +22,30 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  overflow-x: hidden; /* 防止水平溢出 */
+  width: 100%; /* 确保宽度不超过可视区域 */
+  max-width: 100vw; /* 最大宽度不超过视口宽度 */
 }
 
 /* Chinese font settings */
 @layer base {
   html {
     font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* 防止水平溢出 */
   }
   
   /* For headings, you might want to use a serif font */
   h1, h2, h3, h4, h5, h6 {
     font-family: "Microsoft YaHei", "微软雅黑", serif;
+  }
+}
+
+/* 确保所有内容在移动设备上都能完全显示 */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100% !important;
   }
 }

@@ -60,6 +60,10 @@ const AboutContent = () => {
                 <span>@chengdu_barcalendar</span>
               </a>
             </div>
+            <div className="text-red-500 flex items-center text-lg sm:text-xl font-medium">
+              <span className="sr-only">{isChinese ? "微信" : "Wechat"}</span>
+              <span>{isChinese ? "微信账号：" : "Wechat: "}1664508573</span>
+            </div>
           </div>
         </div>
       </div>
@@ -69,4 +73,4 @@ const AboutContent = () => {
 
 export default function AboutPage() {
   return <AboutContent />;
-} 
+}
