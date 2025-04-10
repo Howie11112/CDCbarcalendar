@@ -2,10 +2,12 @@
 
 import { useAppTranslation } from '../hooks/useAppTranslation';
 import { useState, useEffect } from 'react';
+import useScrollVisibility from '../hooks/useScrollVisibility';
 
 export const SubmitEventButton: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubscriptionOpen, setIsSubscriptionOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
     date: '',
@@ -17,9 +19,14 @@ export const SubmitEventButton: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const { t } = useAppTranslation('submitEvent');
   const [submitError, setSubmitError] = useState('');
+  const { isVisible } = useScrollVisibility();
+  
+  // 确保组件仅在客户端渲染后显示，避免水合错误
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
-    // Listen for subscription form open/close events
     const handleSubscriptionOpen = () => setIsSubscriptionOpen(true);
     const handleSubscriptionClose = () => setIsSubscriptionOpen(false);
 
@@ -31,6 +38,9 @@ export const SubmitEventButton: React.FC = () => {
       window.removeEventListener('subscription:close', handleSubscriptionClose);
     };
   }, []);
+
+  // 如果组件还未挂载，返回 null 或占位符
+  if (!mounted) return null;
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -114,7 +124,9 @@ export const SubmitEventButton: React.FC = () => {
       {!isSubscriptionOpen && (
         <button
           onClick={handleOpenModal}
-          className="fixed right-6 bottom-24 bg-white text-gray-900 px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors flex items-center space-x-2 z-50"
+          className={`fixed right-6 bottom-24 bg-white text-gray-900 px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 flex items-center space-x-2 z-50 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+          }`}
           style={{
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
           }}
@@ -329,4 +341,4 @@ export const SubmitEventButton: React.FC = () => {
       )}
     </>
   );
-} 
+};

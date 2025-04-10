@@ -1,22 +1,31 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SubscriptionForm } from './SubscriptionForm';
 import { useAppTranslation } from '../hooks/useAppTranslation';
+import useScrollVisibility from '../hooks/useScrollVisibility';
 
 export const FloatingSubscriptionButton: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useAppTranslation('subscription');
+  const [mounted, setMounted] = useState(false);
+  const { isVisible } = useScrollVisibility();
+  
+  // 确保组件仅在客户端渲染后显示，避免水合错误
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  // 如果组件还未挂载，返回 null 或占位符
+  if (!mounted) return null;
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
-    // Dispatch event when subscription form opens
     window.dispatchEvent(new Event('subscription:open'));
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    // Dispatch event when subscription form closes
     window.dispatchEvent(new Event('subscription:close'));
   };
 
@@ -24,7 +33,9 @@ export const FloatingSubscriptionButton: React.FC = () => {
     <>
       <button
         onClick={handleOpenModal}
-        className="fixed bottom-6 right-6 bg-white text-gray-900 px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors flex items-center space-x-2 z-50"
+        className={`fixed bottom-6 right-6 bg-white text-gray-900 px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 flex items-center space-x-2 z-50 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
         style={{
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
         }}
@@ -47,4 +58,4 @@ export const FloatingSubscriptionButton: React.FC = () => {
       )}
     </>
   );
-}; 
+};
