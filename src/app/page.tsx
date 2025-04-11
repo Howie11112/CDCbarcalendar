@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useAppTranslation } from '@/hooks/useAppTranslation';
 import Image from 'next/image';
 import eventsData from '@/data/events.json';
 import { FloatingSubscriptionButton } from '@/components/FloatingSubscriptionButton';
@@ -8,9 +8,11 @@ import { SubmitEventButton } from '@/components/SubmitEventButton';
 import '../i18n/client';
 
 export default function Home() {
-  const { t, i18n } = useTranslation(['home', 'events']);
-  const featuredEvent = eventsData.events[0]; // Get the first event as featured
-  const currentLang = i18n.language as 'en' | 'zh'; // Get current language
+  const { t: tHome } = useAppTranslation('home');
+  const { t: tEvents } = useAppTranslation('events');
+  const { currentLanguage } = useAppTranslation();
+  
+  const currentLang = currentLanguage as 'en' | 'zh'; // Get current language
 
   return (
     <div>
@@ -22,10 +24,10 @@ export default function Home() {
           {/* Centered Main Titles */}
           <div className="text-center max-w-4xl mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-2">
-              {t('hero.title', { ns: 'home' })}
+              {tHome('hero.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-2">
-              {t('hero.subtitle', { ns: 'home' })}
+              {tHome('hero.subtitle')}
             </p>
             <div className="flex justify-end">
               <p className="text-sm text-white">by Howie</p>
@@ -34,11 +36,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured Event Section */}
+      {/* Events Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            {t('title', { ns: 'events' })}
+            {tEvents('title')}
           </h2>
           <div className="max-w-7xl mx-auto space-y-16">
             {eventsData.events.map((event) => (
@@ -70,13 +72,13 @@ export default function Home() {
                     </h3>
                     <div className="text-black">
                       <p className="mb-1">
-                        <span className="font-medium">{t('details.date', { ns: 'events' })}:</span> {event.date[currentLang] || "TBA"}
+                        <span className="font-medium">{tEvents('details.date')}:</span> {event.date[currentLang] || "TBA"}
                       </p>
                       <p className="mb-1">
-                        <span className="font-medium">{t('details.time', { ns: 'events' })}:</span> {event.time[currentLang] || "TBA"}
+                        <span className="font-medium">{tEvents('details.time')}:</span> {event.time[currentLang] || "TBA"}
                       </p>
                       <p className="mb-1">
-                        <span className="font-medium">{t('details.location', { ns: 'events' })}:</span> {event.location[currentLang] || "TBA"}
+                        <span className="font-medium">{tEvents('details.location')}:</span> {event.location[currentLang] || "TBA"}
                       </p>
                     </div>
                     <p className="text-black leading-relaxed">

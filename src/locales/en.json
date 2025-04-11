@@ -13,7 +13,6 @@
   },
   "navigation": {
     "home": "Home",
-    "events": "Events",
     "about": "About",
     "eventsHistory": "Events History"
   },
@@ -44,7 +43,9 @@
     }
   },
   "eventsHistory": {
-    "title": "Events History"
+    "title": "Events History",
+    "subtitle": "Past Chengdu Bar Events",
+    "noEvents": "No Past Events"
   },
   "subscription": {
     "title": "Track latest events",

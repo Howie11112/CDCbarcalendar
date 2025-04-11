@@ -48,7 +48,25 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    // 启用 react 检测语言变化
+    react: {
+      useSuspense: false,
+      bindI18n: 'languageChanged loaded',
+      bindI18nStore: 'added removed',
+      nsMode: 'default'
+    },
+    // 禁用生产环境调试以提高性能
     debug: process.env.NODE_ENV === 'development',
   });
+
+// 从 localStorage 获取缓存的语言
+const savedLanguage = typeof window !== 'undefined' 
+  ? localStorage.getItem('i18nextLng') 
+  : null;
+
+// 如果有保存的语言设置，立即应用
+if (savedLanguage && Object.keys(SUPPORTED_LANGUAGES).includes(savedLanguage)) {
+  i18n.changeLanguage(savedLanguage);
+}
 
 export default i18n;
