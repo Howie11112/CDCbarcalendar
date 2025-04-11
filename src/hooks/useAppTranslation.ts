@@ -11,7 +11,7 @@ export type TranslationNamespace =
   | 'subscription'
   | 'submitEvent'
   | 'about'
-  | 'contact';
+  | 'eventsHistory';
 
 // Custom hook for translations with better TypeScript support
 export function useAppTranslation(namespace?: TranslationNamespace) {
@@ -33,4 +33,4 @@ export function useAppTranslation(namespace?: TranslationNamespace) {
     changeLanguage,
     isInitialized: i18n.isInitialized,
   };
-} 
+}

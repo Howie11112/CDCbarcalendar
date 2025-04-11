@@ -22,7 +22,7 @@ i18n
     fallbackLng: 'en',
     supportedLngs: Object.keys(SUPPORTED_LANGUAGES),
     defaultNS: 'common',
-    ns: ['common', 'navigation', 'home', 'events', 'subscription', 'submitEvent', 'about', 'contact'],
+    ns: ['common', 'navigation', 'home', 'events', 'subscription', 'submitEvent', 'about', 'eventsHistory'],
     resources: {
       en: {
         common: enTranslations.common,
@@ -32,7 +32,7 @@ i18n
         subscription: enTranslations.subscription,
         submitEvent: enTranslations.submitEvent,
         about: enTranslations.about,
-        contact: enTranslations.contact,
+        eventsHistory: enTranslations.eventsHistory,
       },
       zh: {
         common: zhTranslations.common,
@@ -42,7 +42,7 @@ i18n
         subscription: zhTranslations.subscription,
         submitEvent: zhTranslations.submitEvent,
         about: zhTranslations.about,
-        contact: zhTranslations.contact,
+        eventsHistory: zhTranslations.eventsHistory,
       },
     },
     interpolation: {
@@ -51,4 +51,4 @@ i18n
     debug: process.env.NODE_ENV === 'development',
   });
 
-export default i18n; 
+export default i18n;

@@ -26,7 +26,7 @@ i18n
     // Default namespace
     defaultNS: 'common',
     // Namespaces
-    ns: ['common', 'navigation', 'home', 'events', 'subscription', 'submitEvent', 'about', 'contact'],
+    ns: ['common', 'navigation', 'home', 'events', 'subscription', 'submitEvent', 'about', 'eventsHistory'],
     // Resources
     resources: {
       en: {
@@ -37,7 +37,7 @@ i18n
         subscription: enTranslations.subscription,
         submitEvent: enTranslations.submitEvent,
         about: enTranslations.about,
-        contact: enTranslations.contact,
+        eventsHistory: enTranslations.eventsHistory,
       },
       zh: {
         common: zhTranslations.common,
@@ -47,7 +47,7 @@ i18n
         subscription: zhTranslations.subscription,
         submitEvent: zhTranslations.submitEvent,
         about: zhTranslations.about,
-        contact: zhTranslations.contact,
+        eventsHistory: zhTranslations.eventsHistory,
       },
     },
     // Interpolation options
@@ -58,4 +58,4 @@ i18n
     debug: process.env.NODE_ENV === 'development',
   });
 
-export default i18n; 
+export default i18n;

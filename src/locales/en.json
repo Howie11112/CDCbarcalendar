@@ -15,7 +15,7 @@
     "home": "Home",
     "events": "Events",
     "about": "About",
-    "contact": "Contact"
+    "eventsHistory": "Events History"
   },
   "home": {
     "hero": {
@@ -42,6 +42,9 @@
       "location": "Location",
       "description": "Description"
     }
+  },
+  "eventsHistory": {
+    "title": "Events History"
   },
   "subscription": {
     "title": "Track latest events",
@@ -75,32 +78,6 @@
   },
   "about": {
     "title": "About Us",
-    "content": "Chengdu Bar Calendar is a platform dedicated to providing the latest and most comprehensive bar event information for nightlife enthusiasts in Chengdu. We collect and organize event information from various bars, making it easy for you to stay updated with Chengdu's nightlife scene.",
-    "contact": {
-      "title": "Contact Us",
-      "email": {
-        "title": "Email",
-        "value": ""
-      },
-      "social": {
-        "title": "Social Media",
-        "wechat": "",
-        "xiaohongshu": ""
-      }
-    }
-  },
-  "contact": {
-    "title": "Contact Us",
-    "description": "Have questions or suggestions? We'd love to hear from you!",
-    "email": "Email",
-    "phone": "Phone",
-    "address": "Address",
-    "form": {
-      "name": "Name",
-      "message": "Message",
-      "submit": "Send Message",
-      "success": "Message sent successfully!",
-      "error": "Failed to send message. Please try again."
-    }
+    "content": "Chengdu Bar Calendar is a platform dedicated to providing the latest and most comprehensive bar event information for nightlife enthusiasts in Chengdu. We collect and organize event information from various bars, making it easy for you to stay updated with Chengdu's nightlife scene."
   }
-} 
+}
