@@ -29,7 +29,7 @@ const AboutContent = () => {
         
         <div className="mt-8 sm:mt-12">
           <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
-            {t('followUs')}
+            {t('Follow Us')}
           </h2>
           <div className="space-y-4">
             <div>
