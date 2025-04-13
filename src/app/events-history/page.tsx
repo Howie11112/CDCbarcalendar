@@ -4,6 +4,7 @@ import { useAppTranslation } from '@/hooks/useAppTranslation';
 import eventsData from '@/data/events.json';
 import { isEventPassed } from '@/utils/dateUtils';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const EventsHistoryContent = () => {
   const { t, currentLanguage } = useAppTranslation('eventsHistory');

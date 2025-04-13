@@ -59,14 +59,17 @@ export function getDateFromField(dateField: { en: string; zh: string }): Date | 
   try {
     // 检查是否包含日期范围（如 "April 11-12, 2025"）
     if (dateField.en.includes('-')) {
-      const [_, month, startDay, endDay, year] = dateField.en.match(/([A-Za-z]+)\s+(\d+)-(\d+),\s+(\d+)/) || [];
-      if (month && startDay && endDay && year) {
-        // 我们使用范围的结束日期来判断活动是否已过期
-        const monthIndex = getMonthIndex(month);
-        if (monthIndex !== -1) {
-          endDate = new Date(parseInt(year), monthIndex, parseInt(endDay));
-          if (!isNaN(endDate.getTime())) {
-            return endDate;
+      const rangeMatch = dateField.en.match(/([A-Za-z]+)\s+(\d+)-(\d+),\s+(\d+)/);
+      if (rangeMatch && rangeMatch.length >= 5) {
+        const [_, month, startDay, endDay, year] = rangeMatch;
+        if (month && startDay && endDay && year) {
+          // 我们使用范围的结束日期来判断活动是否已过期
+          const monthIndex = getMonthIndex(month);
+          if (monthIndex !== -1) {
+            endDate = new Date(parseInt(year), monthIndex, parseInt(endDay));
+            if (!isNaN(endDate.getTime())) {
+              return endDate;
+            }
           }
         }
       }
@@ -83,17 +86,36 @@ export function getDateFromField(dateField: { en: string; zh: string }): Date | 
 
   // 2. 尝试从中文日期解析
   try {
-    // 检查是否包含日期范围（如 "2025年4月11,12日"）
-    if (dateField.zh.includes(',')) {
-      const [_, year, month, days] = dateField.zh.match(/(\d+)年(\d+)月([\d,]+)日/) || [];
-      if (year && month && days) {
-        // 提取最后一个日期（结束日期）
-        const endDay = days.split(',').pop()?.trim();
-        if (endDay) {
-          endDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(endDay));
-          if (!isNaN(endDate.getTime())) {
-            return endDate;
-          }
+    // 检查是否包含日期范围（如 "2025年4月11-12日" 或 "2025年4月11,12日"）
+    if (dateField.zh.includes('-') || dateField.zh.includes(',')) {
+      let endDay = '';
+      let year = '';
+      let month = '';
+      
+      // 处理如 "2025年4月11-12日" 的情况
+      if (dateField.zh.includes('-')) {
+        const rangeMatch = dateField.zh.match(/(\d+)年(\d+)月(\d+)-(\d+)日/);
+        if (rangeMatch && rangeMatch.length >= 5) {
+          year = rangeMatch[1];
+          month = rangeMatch[2];
+          endDay = rangeMatch[4]; // 取结束日期
+        }
+      } 
+      // 处理如 "2025年4月11,12日" 的情况
+      else if (dateField.zh.includes(',')) {
+        const rangeMatch = dateField.zh.match(/(\d+)年(\d+)月([\d,]+)日/);
+        if (rangeMatch && rangeMatch.length >= 4) {
+          year = rangeMatch[1];
+          month = rangeMatch[2];
+          // 提取最后一个日期（结束日期）
+          endDay = rangeMatch[3].split(',').pop()?.trim() || '';
+        }
+      }
+      
+      if (year && month && endDay) {
+        endDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(endDay));
+        if (!isNaN(endDate.getTime())) {
+          return endDate;
         }
       }
     }
@@ -146,7 +168,17 @@ export function isEventPassed(event: { date: { en: string; zh: string } }): bool
   // 重置时间部分，仅比较日期
   eventDate.setHours(0, 0, 0, 0);
 
-  // 活动需要在结束日期之后才算过期（即使是结束当天也不算过期）
-  // 将 < 改为 <= 使得活动结束当天也不出现在历史页面
+  // 活动需要已经过了结束日期才算过期（也就是当天的活动不算过期）
+  // 使用 < 而不是 <= 确保当天的活动仍然显示在主页上
   return eventDate < today;
+}
+
+/**
+ * 判断一个事件是否应该显示在主页（即将到来或正在进行的活动）
+ * @param event 事件对象，包含 date 字段
+ * @returns 如果事件应该显示在主页返回 true，否则返回 false
+ */
+export function isEventUpcoming(event: { date: { en: string; zh: string } }): boolean {
+  // 直接返回事件未过期的判断结果
+  return !isEventPassed(event);
 }
