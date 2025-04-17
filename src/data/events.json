@@ -20,7 +20,7 @@
             },
             "image": "/images/4_11.jpg",
             "description": {
-                "en": "This week, we've invited four bartenders from Taiwan for a limited-time guest shift, bringing two nights of diverse and creative cocktail experiences.\n\nFeaturing renowned bars like unDer lab, which has been selected for the 50 Best Discovery list, as well as creations by bartender Seven, whose establishments have consistently ranked on Asia's & World's 50 Best Bars lists for multiple years. These four distinctive bars come together at JING Bar, infusing Chengdu nights with inspiration and sophistication.",
+                "en": "This week, we've invited four bartenders from Taiwan for a limited‑time guest shift, bringing two nights of diverse and creative cocktail experiences.\n\nFeaturing renowned bars like unDer lab, which has been selected for the 50 Best Discovery list, as well as creations by bartender Seven, whose establishments have consistently ranked on Asia's & World's 50 Best Bars lists for multiple years. These four distinctive bars come together at JING Bar, infusing Chengdu nights with inspiration and sophistication.",
                 "zh": "本周，我们邀来来自中国台湾的四位调酒师限时客座，带来两晚风格各异、创意十足的调酒体验。\n\n有入选 50 Best Discovery 的知名酒吧 unDer lab，也有由调酒师 Seven 主理、连续多年登上亚洲 & 世界五十大酒吧榜单的作品。四家风格出众的酒吧齐聚井酒吧，为成都夜晚注入灵感与层次。"
             }
         },
@@ -44,7 +44,7 @@
             },
             "image": "/images/4_12.jpg",
             "description": {
-                "en": "Papuwa Chengdu proudly presents Guest Shift Night, featuring award-winning mixologists from Guangzhou! Join us as champion bartenders 44 from CANTINA AAH and Kaka from IBARUS take over our bar for one special evening. This talented duo will showcase their signature cocktails, blending innovative techniques with a creative mix of ingredients including chili, seafood, grilled elements, exotic spices, and fresh fruits and herbs. Experience their unique personal styles and award-winning creations on April 12, 2025, from 9:00 PM to midnight at our Jinjiang District location. Don't miss this extraordinary cocktail journey!",
+                "en": "Papuwa Chengdu proudly presents Guest Shift Night, featuring award‑winning mixologists from Guangzhou! Join us as champion bartenders 44 from CANTINA AAH and Kaka from IBARUS take over our bar for one special evening. This talented duo will showcase their signature cocktails, blending innovative techniques with a creative mix of ingredients including chili, seafood, grilled elements, exotic spices, and fresh fruits and herbs. Experience their unique personal styles and award‑winning creations on April 12, 2025, from 9:00 PM to midnight at our Jinjiang District location. Don't miss this extraordinary cocktail journey!",
                 "zh": "成都Papuwa隆重呈现客座调酒师之夜，特邀广州顶尖调酒大师驾临！广州CANTINA AAH的44和广州IBARUS的卡卡，这对荣获多项全国及地区冠军的夫妻调酒师将为您呈现独具匠心的鸡尾酒体验。他们将运用辣椒、海鲜、炙烤元素、香料以及新鲜果蔬，创造出极具个人特色的独特调酒作品。2025年4月12日晚9点至午夜，锦江区东顺城南路的Papuwa期待您的光临，共享这场非凡的味蕾盛宴！"
             }
         },
@@ -73,6 +73,30 @@
             }
         },
         {
+            "id": "5",
+            "title": {
+                "en": "City Pick Street Pickleball | Tipsy Social",
+                "zh": "街头匹克球City pick｜微醺酒局"
+            },
+            "date": {
+                "en": "April 18, 2025",
+                "zh": "2025年4月18日"
+            },
+            "time": {
+                "en": "7:00 PM – 10:00 PM",
+                "zh": "19:00‑22:00"
+            },
+            "location": {
+                "en": "Mo Noches Bar, Jinjiang District",
+                "zh": "貘湾 Mo Noches Bar, 锦江区"
+            },
+            "image": "/images/4_18.jpg",
+            "description": {
+                "en": "Pickleball is taking the world by storm! Mo Noches Bar teams up with @Pang Chengdu Pickleball Club🎾 to turn the street into a court and the bar into a courtside lounge.\n\nGrab a paddle, break a sweat, then cool down with a handcrafted cocktail on April 18, 2025, from 7:00 PM to 10:00 PM. Move, play, and sip your way through a lively night in Jinjiang District!",
+                "zh": "匹克球风靡全球！貘湾MoNochesBar联合@Pang成都匹克球俱乐部🎾，要把匹克球搬上街头！\n\n挥拍运动，酣畅淋漓，再来一杯精调鸡尾酒，为春夜增添活力。2025年4月18日19:00‑22:00，锦江区貘湾不见不散，一起运动，一起微醺！"
+            }
+        },
+        {
             "id": "4",
             "title": {
                 "en": "Master Class & Guest Shift | Simone Caporale",
@@ -92,8 +116,8 @@
             },
             "image": "/images/4_19.jpg",
             "description": {
-                "en": "SIP invited Simone Caporale, who has been ranked as one of the World's 50 Best Bars for four consecutive years (2012-2015), to come to Chengdu to share his 'Cuban Wisdom' cocktail concept.",
-                "zh": "SIP特邀连续四年(2012-2015年)蝉联世界50佳酒吧排名第一的主理人Simone Caporale 空降成都 分享深蕴\"古巴智慧\"的鸡尾酒理念"
+                "en": "SIP invited Simone Caporale, who has been ranked as one of the World's 50 Best Bars for four consecutive years (2012‑2015), to come to Chengdu to share his 'Cuban Wisdom' cocktail concept.",
+                "zh": "SIP特邀连续四年(2012‑2015年)蝉联世界50佳酒吧排名第一的主理人Simone Caporale 空降成都 分享深蕴\"古巴智慧\"的鸡尾酒理念"
             }
         }
     ]
