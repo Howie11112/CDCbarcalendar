@@ -88,7 +88,7 @@ export default function Home() {
                           <span className="font-medium">{tEvents('details.location')}:</span> {event.location[currentLang] || "TBA"}
                         </p>
                       </div>
-                      <p className="text-black leading-relaxed">
+                      <p className="text-black leading-relaxed text-justify">
                         {event.description[currentLang] || "Event details coming soon..."}
                       </p>
                     </div>

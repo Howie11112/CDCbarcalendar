@@ -1,123 +1,51 @@
 {
     "events": [
         {
-            "id": "1",
+            "id": "x",
             "title": {
-                "en": "GUEST SHIFT From Taiwan, China",
-                "zh": "中国台湾四家鸡尾酒吧带来客座"
+                "en": "Still Fun Guest Shift | Edition No. 1  ",
+                "zh": "贵州遵义MEDUSA调酒师徐明祥做客成都萃坊"
             },
             "date": {
-                "en": "April 11-12, 2025",
-                "zh": "2025年4月11-12日"
+                "en": "April 23, 2025",
+                "zh": "2025年4月23日"
             },
             "time": {
                 "en": "8:00 PM",
                 "zh": "20:00"
             },
             "location": {
-                "en": "JING Bar, The Temple House, Jinjiang District",
-                "zh": "JING Bar, 成都博舍酒店, 锦江区"
+                "en": "Still Fun萃坊",
+                "zh": "Still Fun萃坊"
             },
-            "image": "/images/4_11.jpg",
+            "image": "/images/4_23.jpg",
             "description": {
-                "en": "This week, we've invited four bartenders from Taiwan for a limited‑time guest shift, bringing two nights of diverse and creative cocktail experiences.\n\nFeaturing renowned bars like unDer lab, which has been selected for the 50 Best Discovery list, as well as creations by bartender Seven, whose establishments have consistently ranked on Asia's & World's 50 Best Bars lists for multiple years. These four distinctive bars come together at JING Bar, infusing Chengdu nights with inspiration and sophistication.",
-                "zh": "本周，我们邀来来自中国台湾的四位调酒师限时客座，带来两晚风格各异、创意十足的调酒体验。\n\n有入选 50 Best Discovery 的知名酒吧 unDer lab，也有由调酒师 Seven 主理、连续多年登上亚洲 & 世界五十大酒吧榜单的作品。四家风格出众的酒吧齐聚井酒吧，为成都夜晚注入灵感与层次。"
+                "en": "South‑west China's leading tech‑minded mixologist is dropping into Chengdu for a single night behind the Still Fun Yulin bar. Xu approaches cocktails with lab‑grade precision—distillation, fat‑washing and low‑temperature sous‑vide—condensing Guizhou's untamed mountain flavours into what he calls a 'tipsy galaxy'.  \nWord is he's also bringing a dark cocktail: intimidating in appearance, unexpectedly sublime on the palate…",
+                "zh": "🍸萃坊「串门」特邀客座首期开张！ 来自遵义 Medusa 水母酒吧的主理人徐明祥本周三闪现成都，接管萃坊玉林店吧台！ 这位西南调酒界技术流，以实验室级手法玩转蒸馏/油洗/低温慢煮，将贵州山野风味化作微醺星河，据说还有暗黑彩蛋特调惊喜……"
             }
         },
         {
             "id": "2",
             "title": {
-                "en": "Guest Shift by Guangzhou's champion bartender couple in Papuwa",
-                "zh": "广州冠军夫妻档调酒师接管Papuwa!"
+                "en": "Guest Shift | Simone Caporale × Liao Jien Ming",
+                "zh": "鸡尾酒客座 | Sips联合创始人Simone Caporale与庙前集团总经理廖建鸣"
             },
             "date": {
-                "en": "April 12, 2025",
-                "zh": "2025年4月12日"
+                "en": "April 25, 2025",
+                "zh": "2025年4月25日"
             },
             "time": {
                 "en": "8:00 PM",
                 "zh": "20:00"
             },
             "location": {
-                "en": "Papuwa, Jinjiang District",
-                "zh": "Papuwa, 锦江区"
+                "en": "Jing Bar, The Temple House",
+                "zh": "井酒吧, 博舍酒店"
             },
-            "image": "/images/4_12.jpg",
+            "image": "/images/4_25.jpg",
             "description": {
-                "en": "Papuwa Chengdu proudly presents Guest Shift Night, featuring award‑winning mixologists from Guangzhou! Join us as champion bartenders 44 from CANTINA AAH and Kaka from IBARUS take over our bar for one special evening. This talented duo will showcase their signature cocktails, blending innovative techniques with a creative mix of ingredients including chili, seafood, grilled elements, exotic spices, and fresh fruits and herbs. Experience their unique personal styles and award‑winning creations on April 12, 2025, from 9:00 PM to midnight at our Jinjiang District location. Don't miss this extraordinary cocktail journey!",
-                "zh": "成都Papuwa隆重呈现客座调酒师之夜，特邀广州顶尖调酒大师驾临！广州CANTINA AAH的44和广州IBARUS的卡卡，这对荣获多项全国及地区冠军的夫妻调酒师将为您呈现独具匠心的鸡尾酒体验。他们将运用辣椒、海鲜、炙烤元素、香料以及新鲜果蔬，创造出极具个人特色的独特调酒作品。2025年4月12日晚9点至午夜，锦江区东顺城南路的Papuwa期待您的光临，共享这场非凡的味蕾盛宴！"
-            }
-        },
-        {
-            "id": "3",
-            "title": {
-                "en": "GUEST SHIFT｜Paal & Gallows Humor",
-                "zh": "客座调酒｜Paal & Gallows Humor"
-            },
-            "date": {
-                "en": "April 13, 2025",
-                "zh": "2025年4月13日"
-            },
-            "time": {
-                "en": "8:00 PM",
-                "zh": "20:00"
-            },
-            "location": {
-                "en": "Beatniks, Jinjiang District",
-                "zh": "Beatniks, 锦江区"
-            },
-            "image": "/images/4_13.jpg",
-            "description": {
-                "en": "We are honored to welcome Crawford So, the mastermind behind Paal and Gallows Humor, who will craft an intoxicating early spring dreamscape. Paal is known for its minimalist design and innovative cocktail philosophy, while Gallows Humor is famous for its dark humor style and bold cocktail explorations. This is an excellent opportunity to experience two distinctly different beverage systems while exploring the boundless spirit of freedom.",
-                "zh": "这次我们很荣幸邀请到 Paal 和 Gallows Humor 的主理人 Crawford So，他将在春季为我们编织一场初春的微醺梦境。Paal 以其简约主义设计和创新调酒理念著称，而 Gallows Humor 则以其黑暗幽默风格和大胆的鸡尾酒探索闻名。这是一次体验两种截然不同饮品体系的绝佳机会，让我们共同探索无边界的自由精神。"
-            }
-        },
-        {
-            "id": "5",
-            "title": {
-                "en": "City Pick Street Pickleball | Tipsy Social",
-                "zh": "街头匹克球City pick｜微醺酒局"
-            },
-            "date": {
-                "en": "April 18, 2025",
-                "zh": "2025年4月18日"
-            },
-            "time": {
-                "en": "7:00 PM – 10:00 PM",
-                "zh": "19:00‑22:00"
-            },
-            "location": {
-                "en": "Mo Noches Bar, Jinjiang District",
-                "zh": "貘湾 Mo Noches Bar, 锦江区"
-            },
-            "image": "/images/4_18.jpg",
-            "description": {
-                "en": "Pickleball is taking the world by storm! Mo Noches Bar teams up with @Pang Chengdu Pickleball Club🎾 to turn the street into a court and the bar into a courtside lounge.",
-                "zh": "匹克球风靡全球！貘湾MoNochesBar联合@Pang成都匹克球俱乐部🎾，要把匹克球搬上街头！一起运动，一起微醺！"
-            }
-        },
-        {
-            "id": "4",
-            "title": {
-                "en": "Master Class & Guest Shift | Simone Caporale",
-                "zh": "连续四年世界50佳酒吧第一名主理人Simone Caporale举办大师课及客座"
-            },
-            "date": {
-                "en": "April 19, 2025",
-                "zh": "2025年4月19日"
-            },
-            "time": {
-                "en": "8:00 PM",
-                "zh": "20:00"
-            },
-            "location": {
-                "en": "Papuwa, Jinjiang District",
-                "zh": "Papuwa, 锦江区"
-            },
-            "image": "/images/4_19.jpg",
-            "description": {
-                "en": "SIP invited Simone Caporale, who has been ranked as one of the World's 50 Best Bars for four consecutive years (2012‑2015), to come to Chengdu to share his 'Cuban Wisdom' cocktail concept.",
-                "zh": "SIP特邀连续四年(2012‑2015年)蝉联世界50佳酒吧排名第一的主理人Simone Caporale 空降成都 分享深蕴\"古巴智慧\"的鸡尾酒理念"
+                "en": "Renaissance artistry meets East‑Asian ingenuity, distilled into a single glass.\n\nFor one exclusive evening at Jing Bar, Simone Caporale — co‑founder of Barcelona's acclaimed Sips — joins forces with Liao Jien Ming, Managing Director of Miau Chien Group, to craft a limited‑edition menu you'll experience only tonight.",
+                "zh": "🍸 Simone Caporale x LIAO JIEN MING 廖建鸣 联袂呈现\n将文艺复兴美学与东方创意注入杯中\n西班牙知名酒吧Sips联合创始人Simone Caporale与庙前集团总经理廖建鸣即将现身井酒吧，带来仅此一夜的限定体验！"
             }
         }
     ]

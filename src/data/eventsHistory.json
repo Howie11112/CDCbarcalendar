@@ -1,0 +1,24 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "image": "/images/4_11.jpg"
+    },
+    {
+      "id": "2",
+      "image": "/images/4_12.jpg"
+    },
+    {
+      "id": "3",
+      "image": "/images/4_13.jpg"
+    },
+    {
+      "id": "5",
+      "image": "/images/4_18.jpg"
+    },
+    {
+      "id": "4",
+      "image": "/images/4_19.jpg"
+    }
+  ]
+}
