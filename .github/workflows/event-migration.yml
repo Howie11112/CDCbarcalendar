@@ -1,0 +1,52 @@
+name: 自动迁移过期活动
+
+on:
+  schedule:
+    # 每天北京时间早上7点运行（UTC时间23:00）
+    - cron: '0 23 * * *'
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  migrate-expired-events:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+      
+      - name: 设置Node.js环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 安装依赖
+        run: npm ci
+      
+      - name: 运行迁移脚本
+        run: node -r ts-node/register -r tsconfig-paths/register src/scripts/githubActionsMigration.ts
+      
+      - name: 检查变更
+        id: check-changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: 提交更改
+        if: steps.check-changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions"
+          git add src/data/events.json src/data/eventsHistory.json
+          git commit -m "自动迁移过期活动 [skip ci]"
+      
+      - name: 推送更改
+        if: steps.check-changes.outputs.changed == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

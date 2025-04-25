@@ -75,7 +75,22 @@ export function getDateFromField(dateField: { en: string; zh: string }): Date | 
       }
     }
     
-    // 如果不是范围格式，尝试直接解析
+    // 如果不是范围格式，尝试直接解析标准英文日期格式，如 "April 23, 2025"
+    const standardMatch = dateField.en.match(/([A-Za-z]+)\s+(\d+),\s+(\d+)/);
+    if (standardMatch && standardMatch.length >= 4) {
+      const [_, month, day, year] = standardMatch;
+      if (month && day && year) {
+        const monthIndex = getMonthIndex(month);
+        if (monthIndex !== -1) {
+          endDate = new Date(parseInt(year), monthIndex, parseInt(day));
+          if (!isNaN(endDate.getTime())) {
+            return endDate;
+          }
+        }
+      }
+    }
+    
+    // 如果上面的特定格式匹配都失败，尝试直接解析
     const date = new Date(dateField.en);
     if (!isNaN(date.getTime())) {
       return date;
@@ -155,13 +170,21 @@ function getMonthIndex(monthName: string): number {
 export function isEventPassed(event: { date: { en: string; zh: string } }): boolean {
   // 获取北京时间（UTC+8）的当前日期
   const now = new Date();
+  // 转换为北京时间
   const beijingTime = new Date(now.getTime() + 8 * 60 * 60 * 1000);
   const today = new Date(beijingTime.toISOString().split('T')[0]);
   today.setHours(0, 0, 0, 0);
 
   // 获取事件日期（使用结束日期来判断是否过期）
   const eventDate = getDateFromField(event.date);
+  
+  // 添加调试信息
+  console.log(`Event date: ${JSON.stringify(event.date)}`);
+  console.log(`Parsed date: ${eventDate}`);
+  console.log(`Today: ${today}`);
+
   if (!eventDate) {
+    console.warn(`无法解析事件日期: ${JSON.stringify(event.date)}`);
     return false; // 如果无法解析日期，默认不过期
   }
 

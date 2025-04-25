@@ -1,38 +1,14 @@
 {
     "events": [
         {
-            "id": "x",
-            "title": {
-                "en": "Still Fun Guest Shift | Edition No. 1  ",
-                "zh": "贵州遵义MEDUSA调酒师徐明祥做客成都萃坊"
-            },
-            "date": {
-                "en": "April 23, 2025",
-                "zh": "2025年4月23日"
-            },
-            "time": {
-                "en": "8:00 PM",
-                "zh": "20:00"
-            },
-            "location": {
-                "en": "Still Fun萃坊",
-                "zh": "Still Fun萃坊"
-            },
-            "image": "/images/4_23.jpg",
-            "description": {
-                "en": "South‑west China's leading tech‑minded mixologist is dropping into Chengdu for a single night behind the Still Fun Yulin bar. Xu approaches cocktails with lab‑grade precision—distillation, fat‑washing and low‑temperature sous‑vide—condensing Guizhou's untamed mountain flavours into what he calls a 'tipsy galaxy'.  \nWord is he's also bringing a dark cocktail: intimidating in appearance, unexpectedly sublime on the palate…",
-                "zh": "🍸萃坊「串门」特邀客座首期开张！ 来自遵义 Medusa 水母酒吧的主理人徐明祥本周三闪现成都，接管萃坊玉林店吧台！ 这位西南调酒界技术流，以实验室级手法玩转蒸馏/油洗/低温慢煮，将贵州山野风味化作微醺星河，据说还有暗黑彩蛋特调惊喜……"
-            }
-        },
-        {
             "id": "2",
             "title": {
                 "en": "Guest Shift | Simone Caporale × Liao Jien Ming",
                 "zh": "鸡尾酒客座 | Sips联合创始人Simone Caporale与庙前集团总经理廖建鸣"
             },
             "date": {
-                "en": "April 25, 2025",
-                "zh": "2025年4月25日"
+                "en": "2025-04-25",
+                "zh": "2025-04-25"
             },
             "time": {
                 "en": "8:00 PM",

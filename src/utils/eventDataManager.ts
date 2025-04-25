@@ -87,6 +87,50 @@ export class EventDataManager {
     }
   }
 
+  // 准备迁移数据（不直接写入文件系统，适用于GitHub Actions）
+  public prepareEventMigration(): {
+    updatedEvents: Event[];
+    updatedHistory: HistoryEvent[];
+    hasMigrated: boolean;
+  } {
+    try {
+      // 读取当前活动
+      const eventsData = this.readEvents();
+      // 读取历史活动
+      const historyData = this.readHistoryEvents();
+
+      // 分离过期和未过期活动
+      const { expiredEvents, activeEvents } = this.separateEvents(eventsData.events);
+
+      // 转换过期活动为历史活动格式
+      const newHistoryEvents = this.convertToHistoryEvents(expiredEvents);
+
+      // 检查是否有需要迁移的活动
+      const hasMigrated = newHistoryEvents.length > 0;
+      
+      // 如果没有需要迁移的活动，直接返回原始数据
+      if (!hasMigrated) {
+        return {
+          updatedEvents: eventsData.events,
+          updatedHistory: historyData.events,
+          hasMigrated: false
+        };
+      }
+
+      // 合并历史活动数据，避免重复
+      const mergedHistory = this.mergeHistoryEvents(historyData.events, newHistoryEvents);
+
+      return {
+        updatedEvents: activeEvents,
+        updatedHistory: mergedHistory,
+        hasMigrated: true
+      };
+    } catch (error) {
+      console.error('Error preparing event migration:', error);
+      throw error;
+    }
+  }
+
   // 分离过期和未过期活动
   private separateEvents(events: Event[]): { expiredEvents: Event[]; activeEvents: Event[] } {
     const expiredEvents: Event[] = [];
