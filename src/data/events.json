@@ -1,28 +1,52 @@
 {
-    "events": [
-        {
-            "id": "1",
-            "title": {
-                "en": "One-Year Anniversary Guest Shift | Eric Pan",
-                "zh": "Bar Lafin 一周年客座活动 | Eric Pan"
-            },
-            "date": {
-                "en": "2025-05-01",
-                "zh": "2025-05-01"
-            },
-            "time": {
-                "en": "8:00 PM",
-                "zh": "20:00"
-            },
-            "location": {
-                "en": "Bar Lafin",
-                "zh": "Bar Lafin姗姗来迟"
-            },
-            "image": "/images/5_1.jpg",
-            "description": {
-                "en": "Bartender from Almost Tea, Chengdu will take over the Bar Lafin at its one-year anniversary.",
-                "zh": "🍸茶不多的调酒师 Eric Pan将在Bar Lafin一周年纪念日这天掌管吧台"
-            }
-        }
-    ]
+  "events": [
+    {
+      "id": "1",
+      "title": {
+        "en": "One-Year Anniversary Guest Shift | Eric Pan",
+        "zh": "Bar Lafin 一周年客座活动 | Eric Pan"
+      },
+      "date": {
+        "en": "2025-05-01",
+        "zh": "2025-05-01"
+      },
+      "time": {
+        "en": "8:00 PM",
+        "zh": "20:00"
+      },
+      "location": {
+        "en": "Bar Lafin",
+        "zh": "Bar Lafin姗姗来迟"
+      },
+      "image": "/images/5_1.jpg",
+      "description": {
+        "en": "Bartender from Almost Tea, Chengdu will take over the Bar Lafin at its one-year anniversary.",
+        "zh": "🍸茶不多的调酒师 Eric Pan将在Bar Lafin一周年纪念日这天掌管吧台"
+      }
+    },
+    {
+      "id": "2",
+      "title": {
+        "en": "Grand Opening | Bozhou Wine Shop",
+        "zh": "播洲酒家盛大开业"
+      },
+      "date": {
+        "en": "2025-05-01",
+        "zh": "2025-05-01"
+      },
+      "time": {
+        "en": "8:00 PM",
+        "zh": "20:00"
+      },
+      "location": {
+        "en": "Bozhou Wine Shop",
+        "zh": "播洲酒家(Bozhou Wine Shop)"
+      },
+      "image": "/images/5_1(2).jpg",
+      "description": {
+        "en": "Grand opening on May 1st: Bozhou Wine Shop! Founded by a native of Guizhou, serving authentic Guizhou snacks × creative cocktails.",
+        "zh": "5月1日，播洲酒家盛大开业！贵州籍创始人倾情呈现地道贵州小吃与创意鸡尾酒——吃点家常菜，喝点家常酒"
+      }
+    }
+  ]
 }
