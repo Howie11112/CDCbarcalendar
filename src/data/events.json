@@ -1,27 +1,27 @@
 {
     "events": [
         {
-            "id": "2",
+            "id": "1",
             "title": {
-                "en": "Guest Shift | Simone Caporale × Liao Jien Ming",
-                "zh": "鸡尾酒客座 | Sips联合创始人Simone Caporale与庙前集团总经理廖建鸣"
+                "en": "One-Year Anniversary Guest Shift | Eric Pan",
+                "zh": "Bar Lafin 一周年客座活动 | Eric Pan"
             },
             "date": {
-                "en": "2025-04-25",
-                "zh": "2025-04-25"
+                "en": "2025-05-01",
+                "zh": "2025-05-01"
             },
             "time": {
                 "en": "8:00 PM",
                 "zh": "20:00"
             },
             "location": {
-                "en": "Jing Bar, The Temple House",
-                "zh": "井酒吧, 博舍酒店"
+                "en": "Bar Lafin",
+                "zh": "Bar Lafin姗姗来迟"
             },
-            "image": "/images/4_25.jpg",
+            "image": "/images/5_1.jpg",
             "description": {
-                "en": "Renaissance artistry meets East‑Asian ingenuity, distilled into a single glass.\n\nFor one exclusive evening at Jing Bar, Simone Caporale — co‑founder of Barcelona's acclaimed Sips — joins forces with Liao Jien Ming, General Manager of Hope and Seasame Group, to craft a limited‑edition menu you'll experience only tonight.",
-                "zh": "🍸 Simone Caporale x LIAO JIEN MING 廖建鸣 联袂呈现\n将文艺复兴美学与东方创意注入杯中\n西班牙知名酒吧Sips联合创始人Simone Caporale与庙前集团总经理廖建鸣即将现身井酒吧，带来仅此一夜的限定体验！"
+                "en": "Bartender from Almost Tea, Chengdu will take over the Bar Lafin at its one-year anniversary.",
+                "zh": "🍸茶不多的调酒师 Eric Pan将在Bar Lafin一周年纪念日这天掌管吧台"
             }
         }
     ]
