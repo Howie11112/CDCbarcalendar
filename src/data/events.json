@@ -20,7 +20,7 @@
       },
       "image": "/images/5_1.jpg",
       "description": {
-        "en": "Bartender from Almost Tea, Chengdu will take over the Bar Lafin at its one-year anniversary.",
+        "en": "Eric Pan from AlmostTea, Chengdu will take over the Bar Lafin at its one-year anniversary.",
         "zh": "🍸茶不多的调酒师 Eric Pan将在Bar Lafin一周年纪念日这天掌管吧台"
       }
     },
@@ -46,6 +46,54 @@
       "description": {
         "en": "Grand opening on May 1st: Bozhou Wine Shop! Founded by a native of Guizhou, serving authentic Guizhou snacks × creative cocktails.",
         "zh": "5月1日，播洲酒家盛大开业！贵州籍创始人倾情呈现地道贵州小吃与创意鸡尾酒——吃点家常菜，喝点家常酒"
+      }
+    },
+    {
+      "id": "3",
+      "title": {
+        "en": "Chengdu SKP X Guangzhou Miao Qian Ice Room: Hope & Seasame",
+        "zh": "成都SKP X 广州庙前冰室 Hope & Seasame"
+      },
+      "date": {
+        "en": "2025-05-01 to 2025-05-03",
+        "zh": "2025-05-01至2025-05-03"
+      },
+      "time": {
+        "en": "6:30 PM - 10:30 PM",
+        "zh": "18:30-22:30"
+      },
+      "location": {
+        "en": "Chengdu SKP 2F Fountain Plaza",
+        "zh": "成都SKP二楼喷泉广场"
+      },
+      "image": "",
+      "description": {
+        "en": "From May 1 to 3, SKP is teaming up with the mixologist from Hope & Sesame—ranked #14 in Asia’s Top 50 Bars—to immerse you in a dreamy bubble ocean and have you grooving to pulsing EDM!",
+        "zh": "5月1日至3日，SKP携手亚洲50佳酒吧第14名Hope & Sesame的资深调酒师，带您沉浸在梦幻泡泡海洋中，并随着动感电音尽情摇摆！"
+      }
+    },
+    {
+      "id": "4",
+      "title": {
+        "en": "Chengdu SKP X Changsha CMYK",
+        "zh": "成都SKP X 长沙CMYK"
+      },
+      "date": {
+        "en": "2025-05-04 to 2025-05-05",
+        "zh": "2025-05-04至2025-05-05"
+      },
+      "time": {
+        "en": "6:30 PM - 10:30 PM",
+        "zh": "18:30-22:30"
+      },
+      "location": {
+        "en": "Chengdu SKP 2F Fountain Plaza",
+        "zh": "成都SKP二楼喷泉广场"
+      },
+      "image": "",
+      "description": {
+        "en": "On May 4 and 5, SKP is featuring Tommy, founder of CMYK—ranked #43 among Asia’s Best Bars—to deliver a bubble party",
+        "zh": "5月4日至5日，SKP特邀亚洲最佳酒吧第43名CMYK品牌主理人Tommy，带您震撼泡泡派对"
       }
     }
   ]
