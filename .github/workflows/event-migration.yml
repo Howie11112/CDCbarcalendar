@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 获取完整历史以确保正确的git操作
       
       - name: 设置Node.js环境
         uses: actions/setup-node@v3
@@ -50,3 +52,12 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+          
+      - name: 触发Vercel重新部署
+        if: steps.check-changes.outputs.changed == 'true'
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}  # 需要在GitHub Secrets中设置
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}  # 需要在GitHub Secrets中设置
+          vercel-args: '--prod'  # 触发生产环境部署

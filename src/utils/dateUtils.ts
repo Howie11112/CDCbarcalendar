@@ -57,6 +57,20 @@ export function getDateFromField(dateField: { en: string; zh: string }): Date | 
   
   // 1. 尝试从英文日期解析
   try {
+    // 检查是否包含"to"格式的日期范围（如 "2025-05-01 to 2025-05-03"）
+    if (dateField.en.includes(' to ')) {
+      const dateParts = dateField.en.split(' to ');
+      if (dateParts.length >= 2) {
+        // 使用范围的结束日期（即第二部分）
+        const endDateStr = dateParts[1].trim();
+        const endDateObj = new Date(endDateStr);
+        if (!isNaN(endDateObj.getTime())) {
+          console.log(`解析到日期范围，使用结束日期: ${endDateObj.toISOString()}`);
+          return endDateObj;
+        }
+      }
+    }
+    
     // 检查是否包含日期范围（如 "April 11-12, 2025"）
     if (dateField.en.includes('-')) {
       const rangeMatch = dateField.en.match(/([A-Za-z]+)\s+(\d+)-(\d+),\s+(\d+)/);
@@ -96,11 +110,24 @@ export function getDateFromField(dateField: { en: string; zh: string }): Date | 
       return date;
     }
   } catch (error) {
-    console.warn("无法解析英文日期:", dateField.en);
+    console.warn("无法解析英文日期:", dateField.en, error);
   }
 
   // 2. 尝试从中文日期解析
   try {
+    // 检查是否包含"至"格式的日期范围（如 "2025-05-01至2025-05-03"）
+    if (dateField.zh.includes('至')) {
+      const dateParts = dateField.zh.split('至');
+      if (dateParts.length >= 2) {
+        // 使用范围的结束日期（即第二部分）
+        const endDateStr = dateParts[1].trim();
+        const endDateObj = new Date(endDateStr);
+        if (!isNaN(endDateObj.getTime())) {
+          return endDateObj;
+        }
+      }
+    }
+    
     // 检查是否包含日期范围（如 "2025年4月11-12日" 或 "2025年4月11,12日"）
     if (dateField.zh.includes('-') || dateField.zh.includes(',')) {
       let endDay = '';
@@ -170,6 +197,9 @@ function getMonthIndex(monthName: string): number {
 export function isEventPassed(event: { date: { en: string; zh: string } }): boolean {
   // 获取北京时间（UTC+8）的当前日期
   const now = new Date();
+  // 模拟当前日期为 2025-05-10 用于测试
+  // const now = new Date('2025-05-10');
+  
   // 转换为北京时间
   const beijingTime = new Date(now.getTime() + 8 * 60 * 60 * 1000);
   const today = new Date(beijingTime.toISOString().split('T')[0]);
@@ -178,10 +208,11 @@ export function isEventPassed(event: { date: { en: string; zh: string } }): bool
   // 获取事件日期（使用结束日期来判断是否过期）
   const eventDate = getDateFromField(event.date);
   
-  // 添加调试信息
-  console.log(`Event date: ${JSON.stringify(event.date)}`);
-  console.log(`Parsed date: ${eventDate}`);
-  console.log(`Today: ${today}`);
+  // 添加更详细的调试信息
+  console.log(`当前活动: ${event.date.en} / ${event.date.zh}`);
+  console.log(`解析后的日期: ${eventDate ? eventDate.toISOString() : 'null'}`);
+  console.log(`今天日期: ${today.toISOString()}`);
+  console.log(`是否过期: ${eventDate && eventDate < today}`);
 
   if (!eventDate) {
     console.warn(`无法解析事件日期: ${JSON.stringify(event.date)}`);
@@ -192,7 +223,6 @@ export function isEventPassed(event: { date: { en: string; zh: string } }): bool
   eventDate.setHours(0, 0, 0, 0);
 
   // 活动需要已经过了结束日期才算过期（也就是当天的活动不算过期）
-  // 使用 < 而不是 <= 确保当天的活动仍然显示在主页上
   return eventDate < today;
 }
 

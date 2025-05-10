@@ -1,6 +1,8 @@
 'use client';
 
 import { useAppTranslation } from '@/hooks/useAppTranslation';
+import eventsData from '@/data/events.json';
+import Link from 'next/link';
 import Image from 'next/image';
 import allEvents from '@/data/events.json';
 import { FloatingSubscriptionButton } from '@/components/FloatingSubscriptionButton';
@@ -19,9 +21,9 @@ export default function Home() {
   const upcomingEvents = allEvents.events.filter(event => isEventUpcoming(event));
 
   return (
-    <div>
-      {/* Hero Section */}
-      <div className="relative h-[70vh] w-full">
+    <main>
+      {/* Hero Section - 减小高度 */}
+      <div className="relative h-[25vh] sm:h-[30vh] w-full">
         {/* For now, we'll use a fallback for the missing image */}
         <div className="absolute inset-0 bg-gray-800"></div>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -105,6 +107,6 @@ export default function Home() {
       
       {/* Submit Event Button */}
       <SubmitEventButton />
-    </div>
+    </main>
   );
 }

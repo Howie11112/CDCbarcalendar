@@ -3,7 +3,7 @@ import path from 'path';
 import { Event } from '@/types/event';
 import { isEventPassed } from './dateUtils';
 
-// 定义历史活动的接口，只保留ID和图片
+// 修改历史活动接口定义，只保留ID和图片
 export interface HistoryEvent {
   id: string;
   image: string;
@@ -22,10 +22,14 @@ export class EventDataManager {
   // 读取当前活动
   public readEvents(): { events: Event[] } {
     try {
+      if (!fs.existsSync(this.eventsPath)) {
+        console.warn(`活动文件不存在: ${this.eventsPath}`);
+        return { events: [] };
+      }
       const data = fs.readFileSync(this.eventsPath, 'utf-8');
       return JSON.parse(data);
     } catch (error) {
-      console.error('Error reading events file:', error);
+      console.error('读取活动文件出错:', error);
       return { events: [] };
     }
   }
@@ -33,10 +37,14 @@ export class EventDataManager {
   // 读取历史活动
   public readHistoryEvents(): { events: HistoryEvent[] } {
     try {
+      if (!fs.existsSync(this.historyEventsPath)) {
+        console.warn(`历史活动文件不存在: ${this.historyEventsPath}`);
+        return { events: [] };
+      }
       const data = fs.readFileSync(this.historyEventsPath, 'utf-8');
       return JSON.parse(data);
     } catch (error) {
-      console.error('Error reading history events file:', error);
+      console.error('读取历史活动文件出错:', error);
       return { events: [] };
     }
   }
@@ -57,33 +65,42 @@ export class EventDataManager {
       // 分离过期和未过期活动
       const { expiredEvents, activeEvents } = this.separateEvents(eventsData.events);
 
+      console.log(`总活动数: ${eventsData.events.length}, 过期活动数: ${expiredEvents.length}, 有效活动数: ${activeEvents.length}`);
+
       // 转换过期活动为历史活动格式
       const newHistoryEvents = this.convertToHistoryEvents(expiredEvents);
 
       // 检查是否有需要迁移的活动
       if (newHistoryEvents.length === 0) {
+        console.log('没有需要迁移的过期活动');
         return;
       }
 
       // 合并历史活动数据，避免重复
       const mergedHistory = this.mergeHistoryEvents(historyData.events, newHistoryEvents);
 
+      // 确保目录存在
+      const eventsDir = path.dirname(this.eventsPath);
+      if (!fs.existsSync(eventsDir)) {
+        fs.mkdirSync(eventsDir, { recursive: true });
+      }
+
       // 更新文件
       fs.writeFileSync(
         this.eventsPath,
-        JSON.stringify({ events: activeEvents }, null, 4),
+        JSON.stringify({ events: activeEvents }, null, 2),
         'utf-8'
       );
 
       fs.writeFileSync(
         this.historyEventsPath,
-        JSON.stringify({ events: mergedHistory }, null, 4),
+        JSON.stringify({ events: mergedHistory }, null, 2),
         'utf-8'
       );
 
-      console.log(`Moved ${newHistoryEvents.length} expired events to history`);
+      console.log(`已将 ${newHistoryEvents.length} 个过期活动移至历史记录`);
     } catch (error) {
-      console.error('Error moving expired events:', error);
+      console.error('移动过期活动时出错:', error);
     }
   }
 
@@ -126,7 +143,7 @@ export class EventDataManager {
         hasMigrated: true
       };
     } catch (error) {
-      console.error('Error preparing event migration:', error);
+      console.error('准备活动迁移时出错:', error);
       throw error;
     }
   }
@@ -137,7 +154,11 @@ export class EventDataManager {
     const activeEvents: Event[] = [];
 
     events.forEach(event => {
-      if (isEventPassed(event)) {
+      // 尝试解析日期并判断活动是否已过期
+      const isPassed = isEventPassed(event);
+      console.log(`活动 ${event.id} (${event.title.en}) 是否已过期: ${isPassed}`);
+      
+      if (isPassed) {
         expiredEvents.push(event);
       } else {
         activeEvents.push(event);
@@ -147,19 +168,62 @@ export class EventDataManager {
     return { expiredEvents, activeEvents };
   }
 
-  // 转换为历史活动格式，只保留ID和图片
+  // 转换为历史活动格式
   private convertToHistoryEvents(events: Event[]): HistoryEvent[] {
     return events.map(event => ({
       id: event.id,
       image: event.image
+      // 移除timestamp和title字段
     }));
   }
 
   // 合并历史活动，避免重复
   private mergeHistoryEvents(existingEvents: HistoryEvent[], newEvents: HistoryEvent[]): HistoryEvent[] {
-    const existingIds = new Set(existingEvents.map(e => e.id));
-    const uniqueNewEvents = newEvents.filter(e => !existingIds.has(e.id));
+    // 使用Map来检查重复项，优先使用图片路径作为识别依据，其次使用ID
+    const existingMap = new Map<string, HistoryEvent>();
+    const imageMap = new Map<string, boolean>();
     
-    return [...existingEvents, ...uniqueNewEvents];
+    existingEvents.forEach(e => {
+      existingMap.set(e.id, e);
+      if (e.image) {
+        imageMap.set(e.image, true);
+      }
+    });
+    
+    // 过滤重复项
+    const uniqueNewEvents: HistoryEvent[] = [];
+    
+    newEvents.forEach(e => {
+      if (!existingMap.has(e.id) && !imageMap.has(e.image)) {
+        // 全新的活动，直接添加
+        uniqueNewEvents.push(e);
+      } else if (!imageMap.has(e.image)) {
+        // ID重复但图片不同，使用新ID
+        const newId = `${e.id}-${Date.now().toString().slice(-4)}`;
+        console.log(`ID冲突，为活动生成新ID: ${e.id} → ${newId}`);
+        uniqueNewEvents.push({
+          ...e,
+          id: newId
+        });
+      } else {
+        // 图片重复，跳过此活动
+        console.log(`跳过重复图片的活动: ${e.image}`);
+      }
+      
+      // 更新图片映射以避免后续重复
+      if (e.image) {
+        imageMap.set(e.image, true);
+      }
+    });
+    
+    console.log(`历史活动去重: ${newEvents.length} 个新活动中有 ${uniqueNewEvents.length} 个是唯一的`);
+    
+    // 合并并按照ID排序（假设ID是按时间顺序分配的，较小的ID表示较早的活动）
+    return [...existingEvents, ...uniqueNewEvents].sort((a, b) => {
+      // 尝试从ID中提取数字部分进行比较
+      const idA = parseInt(a.id.replace(/\D/g, '')) || 0;
+      const idB = parseInt(b.id.replace(/\D/g, '')) || 0;
+      return idA - idB; // 升序排列，从早到晚
+    });
   }
 }
