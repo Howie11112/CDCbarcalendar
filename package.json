@@ -10,7 +10,7 @@
     "migrate": "ts-node -r tsconfig-paths/register src/scripts/migrateExpiredEvents.ts",
     "migrate-all": "node -r ts-node/register -r tsconfig-paths/register src/scripts/migrateAllEvents.ts",
     "recover-history": "node -r ts-node/register -r tsconfig-paths/register src/scripts/recoverHistoryEvents.ts",
-    "vercel-build": "node -r ts-node/register -r tsconfig-paths/register src/scripts/vercelPrepareBuild.ts && next build"
+    "vercel-build": "node src/scripts/vercelPrepareBuild.js && next build"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
